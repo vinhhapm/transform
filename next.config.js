@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 
 const config = {
+  target: "serverless",
   webpack(config, options) {
     config.node = {
       fs: "empty",
@@ -14,6 +15,13 @@ const config = {
         "process.env.DEV": JSON.stringify(options.dev),
         IN_BROWSER: !options.isServer,
         IS_DEV: options.dev
+      })
+    );
+
+    // Ignore specific modules that cause issues in serverless
+    config.plugins.push(
+      new webpack.IgnorePlugin({
+        resourceRegExp: /^(rdf-canonize|text-encoding-utf-8)$/
       })
     );
 

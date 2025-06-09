@@ -53,6 +53,7 @@
     "babel-plugin-json-to-proptypes": "^0.1.0",
     "babel-plugin-object-styles-to-template": "^0.2.2",
     "babel-standalone": "^6.26.0",
+    "babylon": "^6.18.0",
     "clipboard-copy": "^4.0.1",
     "css-to-tailwindcss": "^1.0.4",
     "evergreen-ui": "^4.28.0",

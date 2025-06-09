@@ -1,6 +1,4 @@
 import React, { useCallback, useMemo, useState } from "react";
-import { promises as fs } from "fs";
-import path from "path";
 import dynamic from "next/dynamic";
 
 import {
@@ -255,12 +253,14 @@ export default function CssToTailwind3({ defaultSettings }) {
 }
 
 export async function getStaticProps() {
-  const rawTailwindConfig = await fs.readFile(
-    path.resolve(
-      "./node_modules/css-to-tailwindcss/node_modules/tailwindcss/stubs/simpleConfig.stub.js"
-    ),
-    "utf-8"
-  );
+  // Use a static default TailwindCSS config instead of reading from node_modules
+  const rawTailwindConfig = `module.exports = {
+  content: [],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}`;
 
   return {
     props: {

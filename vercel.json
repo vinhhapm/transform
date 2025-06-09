@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "env": {
+    "NODE_OPTIONS": "--openssl-legacy-provider"
+  },
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--openssl-legacy-provider"
+    }
+  },
+  "buildCommand": "yarn vercel-build",
+  "framework": "nextjs",
+  "functions": {
+    "pages/api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "redirects": [
+    {
+      "source": "/svg-to-jsx",
+      "destination": "/"
+    },
+    {
+      "source": "/json-to-flow-types",
+      "destination": "/json-to-flow"
+    },
+    {
+      "source": "/json-to-ts-interface",
+      "destination": "/json-to-typescript"
+    },
+    {
+      "source": "/json-schema-to-ts",
+      "destination": "/json-schema-to-typescript"
+    }
+  ]
+}
