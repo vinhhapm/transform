@@ -8,13 +8,6 @@
       "NODE_OPTIONS": "--openssl-legacy-provider"
     }
   },
-  "buildCommand": "yarn vercel-build",
-  "framework": "nextjs",
-  "functions": {
-    "pages/api/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "redirects": [
     {
       "source": "/svg-to-jsx",
